@@ -1,0 +1,143 @@
+/* ------------------------------------------------------------------
+   NextStop — tokens
+   Palette taken from South African Railways enamel signage: bottle
+   green ground, brass fittings, bone-white lettering. The three biome
+   colours grade the route line from highveld to Karoo to Cape.
+   ------------------------------------------------------------------ */
+
+:root {
+  --ink: #051915;
+  --green: #0b2b24;
+  --green-lift: #10382e;
+  --green-edge: #1c4b3e;
+  --rule: #1a4438;
+
+  --brass: #d6a756;
+  --brass-dim: #8a6c36;
+
+  --bone: #f2ede2;
+  --bone-mid: #b9c9bf;
+  --bone-dim: #7d968a;
+
+  --highveld: #9bc26b;
+  --karoo: #d6a756;
+  --cape: #6fb3c4;
+
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "Archivo", system-ui, -apple-system, sans-serif;
+  --mono: "DM Mono", "Consolas", ui-monospace, monospace;
+  --serif: "Instrument Serif", Georgia, serif;
+
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --maxw: 1440px;
+
+  --r-sm: 3px;
+  --r-md: 6px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Display type: Archivo's width axis, pushed wide. Reads as a plaque. */
+.display {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 112;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Eyebrow / label: the narrow end of the same axis, tracked out. */
+.label {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 88;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  font-feature-settings: "tnum";
+}
+
+.shell {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
